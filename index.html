@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const emojiErrors = ['first_name', 'last_name'];
+        const errorsByKey = ['first_name', 'email'];
+        const validationArray = [];
+        console.log(emojiErrors);
+        console.log(errorsByKey);
+        errorsByKey.forEach((error) => {
+            emojiErrors.forEach((emojiError , index) => {
+                if(error.includes(emojiError)) {
+                    emojiErrors.splice(index, 1);
+                    validationArray.push('true');
+                } else {
+                    validationArray.push('false');
+                }
+            })
+        });
+        console.log(validationArray);
+        console.log(emojiErrors);
+        if(validationArray.includes('false')) {
+            console.log('false');
+        } else {
+            console.log('true');
+        }
+        
+    </script>
+</body>
+</html>
